@@ -82,17 +82,17 @@ public boolean deleteReservation(int id){
 
 public Status getReservationStatusReport(){
     List <Reservation> completed = reservationRepository.getReservationByStatus("completed");
-    List <Reservation> cancelled = reservationRepository.getReservationByStatus("completed");
-    return new Status(completed.size(), cancelled.size());
+    List <Reservation> cancelled = reservationRepository.getReservationByStatus("cancelled");
+    return new Status(completed.size(),cancelled.size());
 }
-public List <Reservation> informePeriodoTiempoReservas (String datoA, String datoB){
+public List<Reservation> informePeriodoTiempoReservas(String datoA, String datoB){
 SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");   
-Date a= new Date();
-Date b= new Date();
+Date a = new Date();
+Date b = new Date();
 
 try{
-    a= parser.parse(datoA);
-    b= parser.parse(datoB);
+    a = parser.parse(datoA);
+    b = parser.parse(datoB);
 }catch(ParseException e){
 e.printStackTrace();
 }

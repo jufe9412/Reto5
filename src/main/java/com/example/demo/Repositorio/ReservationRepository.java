@@ -49,10 +49,10 @@ public Optional <Reservation> getReservation(int id) {
     }
     
     public List<CountClient> getTopClient(){
-        List<CountClient> res=  new ArrayList<>();
-        List<Object[]> report = extencionesCrud.countTotalreservationByClient();
-        for(int i=0;i <report.size();i++){
-            res.add(new CountClient((Long)report.get(i)[1],(Client) report.get(i)[0]));
+        List<CountClient> res= new ArrayList<>();
+        List<Object[]> report = extencionesCrud.countTotalReservationByClient();
+        for(int i=0;i<report.size();i++){
+            res.add(new CountClient((Long)report.get(i)[1],(Client)report.get(i)[0]));
         }
         return res;
         }
